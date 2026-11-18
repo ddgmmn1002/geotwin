@@ -1,0 +1,31 @@
+# Project management documents
+PROJECT_CONTEXT.md
+LEARNING_GUIDE.md
+development-log.md
+
+# Node.js  React
+node_modules
+dist
+coverage
+
+# Java  Gradle
+.gradle
+build
+out
+.class
+
+# Environment variables
+.env
+.env.
+!.env.example
+
+# IDE
+.idea
+.vscode
+
+# Logs
+.log
+
+# OS
+.DS_Store
+Thumbs.db
