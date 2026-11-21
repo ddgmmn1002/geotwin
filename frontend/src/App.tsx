@@ -9,7 +9,6 @@ function App() {
     if (!containerRef.current) return;
 
     Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_ION_TOKEN;
-
     const viewer = new Viewer(containerRef.current, {
       baseLayerPicker: false,
       geocoder: false,
@@ -49,7 +48,6 @@ function App() {
     return () => {
       cancelled = true;
       viewer.destroy();
-
     }
   }, [])
 
