@@ -1,6 +1,9 @@
 import 'cesium/Build/Cesium/Widgets/widgets.css';
 import { Viewer, Cartesian3, Math as CesiumMath, Ion, createOsmBuildingsAsync, Terrain } from "cesium";
 import { useEffect, useRef } from "react";
+import { FacilityList } from './components/FacilityList';
+import { FacilityDetail } from './components/FacilityDetail';
+import "./style/App.css";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -52,10 +55,11 @@ function App() {
   }, [])
 
   return (
-    <div
-      ref={containerRef}
-      style={{width: '100%', height: '100%'}}
-    />
+    <main className='app-layout'>
+      <FacilityList/>
+      <div ref={containerRef} className='map-container'/>
+      <FacilityDetail/>
+    </main>
   )
 }
 
