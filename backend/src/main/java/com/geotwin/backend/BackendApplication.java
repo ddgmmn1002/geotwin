@@ -12,12 +12,4 @@ public class BackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
 	}
-
-//	@Bean
-//	CommandLineRunner checkDatabase(JdbcTemplate jdbcTemplate) {
-//		return args -> {
-//			Long count = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM public.facilities", Long.class);
-//			System.out.println("데이터 개수: " + count);
-//		};
-//	}
 }
