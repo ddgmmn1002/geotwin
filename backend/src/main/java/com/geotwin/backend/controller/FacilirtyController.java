@@ -1,13 +1,13 @@
 package com.geotwin.backend.controller;
 
 import com.geotwin.backend.dto.FacilityResponse;
+import com.geotwin.backend.dto.NearbyFacilityResponse;
 import com.geotwin.backend.service.FacilityService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -24,5 +24,20 @@ public class FacilirtyController {
     @GetMapping
     public List<FacilityResponse> findAll(){
         return facilityService.findAll();
+    }
+
+    @GetMapping("/nearby")
+    public List<NearbyFacilityResponse> findNearest(
+            @RequestParam
+            Double longitude,
+            @RequestParam
+            Double latitude,
+            @RequestParam
+            Double radiusMeters,
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate referenceDate
+    ){
+        return facilityService.findNearest(longitude, latitude, radiusMeters, referenceDate);
     }
 }
