@@ -15,13 +15,6 @@ body,
   height: 100%;
 }
 
-.facility-list {
-  min-height: 0;
-  padding: 16px;
-  border-right: 1px solid #ddd;
-  overflow-y: auto;
-}
-
 .map-container {
   position: relative;
   width: 100%;
@@ -36,4 +29,26 @@ body,
   padding: 16px;
   border-left: 1px solid #ddd;
   overflow-y: auto;
+}
+
+.facility-list {
+  min-height: 0;
+  padding: 16px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.facility-item {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+.facility-item.selected {
+  border-color: #2563eb;
+  background-color: #eff6ff;
 }
