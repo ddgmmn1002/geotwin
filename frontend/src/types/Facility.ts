@@ -8,3 +8,7 @@ export type Facility = {
     availability: string | null;
     referenceDate: string;
 }
+
+export type NearbyFacility = Facility & {
+    distanceMeters: number;
+};
